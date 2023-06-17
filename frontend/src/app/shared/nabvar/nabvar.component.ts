@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NavigationEnd, Router } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { privateRoutes, publicRoutes } from 'src/app/models';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   standalone: true,
@@ -18,7 +19,7 @@ export class NabvarComponent {
   hiddeNavbar: boolean = false;
   changeNavContent: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public auth: AuthService) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (

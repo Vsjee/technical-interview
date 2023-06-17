@@ -54,7 +54,11 @@ export class AuthService {
   }
 
   logout() {
-    return signOut(this.afAuth);
+    return signOut(this.afAuth)
+      .then(() => {
+        this.router.navigate([publicRoutes.SIGNIN]);
+      })
+      .catch((error) => console.error(error));
   }
 
   deleteAccount(user$: User) {
