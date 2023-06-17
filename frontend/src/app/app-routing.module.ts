@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from '@angular/fire/auth-guard';
+
 const routes: Routes = [
   {
     path: 'public',
@@ -11,6 +13,7 @@ const routes: Routes = [
     path: 'private',
     loadChildren: () =>
       import('./private/dashboard.module').then((m) => m.DashboardModule),
+    canActivate: [AuthGuard],
   },
   {
     path: '**',
