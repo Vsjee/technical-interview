@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 8px 5%;
+  background: var(--bg-primary-transparent);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+
+    .list__item {
+      padding: 8px 12px;
+      background-color: var(--green-3);
+      border: 1px solid var(--green-3);
+      border-radius: 20px;
+      transition: var(--basic-transition);
+
+      &:hover {
+        background-color: var(--bg-accent);
+        color: var(--green-3);
+      }
+    }
+
+    .list__item--logout {
+      display: grid;
+      place-content: center;
+      background: none;
+      border: none;
+    }
+  }
+}

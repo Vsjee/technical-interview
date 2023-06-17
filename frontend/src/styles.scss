@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  font-family: Inter, systemk-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 1.125rem /* 18px */;
   line-height: 1.75rem /* 28px */;
   font-weight: 1.65rem;
@@ -16,6 +16,7 @@
   -webkit-text-size-adjust: 100%;
 
   --bg-primary: #1a1a1a;
+  --bg-primary-transparent: rgba(26, 26, 26, 0.2);
   --bg-accent: #0e0e0e;
   --green-1: #3a8d4c;
   --green-2: #47ab5d;
@@ -25,10 +26,16 @@
   --gray-3: #a1a1aa;
   --white: #ffffff;
   --white-1: #e3e3e3;
+
+  --basic-transition: 0.3s ease-in;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+button {
+  cursor: pointer;
 }

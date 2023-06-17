@@ -1,0 +1,25 @@
+<nav class="nav" *ngIf="hiddeNavbar === false">
+  <h1>logo</h1>
+  <ul class="nav__list">
+    <button class="list__item" (click)="navigate(publicRoutes.SIGNIN)">
+      Ingresa
+    </button>
+  </ul>
+</nav>
+
+<nav class="nav" *ngIf="changeNavContent === true">
+  <h1>logo</h1>
+  <ul class="nav__list">
+    <button class="list__item" (click)="navigate(privateRoutes.PROFILE)">
+      Perfil
+    </button>
+    <button
+      mat-fab
+      color="warn"
+      aria-label="Example icon button with a home icon"
+      class="list__item--logout"
+    >
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </ul>
+</nav>
