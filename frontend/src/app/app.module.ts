@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NabvarComponent } from './shared/nabvar/nabvar.component';
@@ -19,6 +21,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     HttpClientModule,
     NabvarComponent,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
