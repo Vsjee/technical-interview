@@ -1,1 +1,4 @@
 GET http://localhost:3000/api/teams
+
+###
+GET http://localhost:3000/api/teams/648d3ea926a3bbff7d66a94c

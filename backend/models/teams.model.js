@@ -18,7 +18,6 @@ const teamsSchema = new Schema({
     surface: String,
     image: String
   }
-
 })
 
 exports.module = model('team', teamsSchema)
