@@ -36,6 +36,20 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: customGrifter;
+  src: url(./assets/fonts/grifterbold.otf);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: customGrifter;
+}
+
 button {
   cursor: pointer;
 }
