@@ -1,0 +1,103 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+
+  .container__left {
+    position: relative;
+    display: grid;
+    place-content: center;
+    background: var(--green-2);
+
+    .left__text {
+      font-weight: bolder;
+      width: 100%;
+      padding: 0 5%;
+      text-align: center;
+      font-size: 2rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .container__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .rigth__hr {
+      width: 80%;
+      height: 2px;
+      margin: 1.5rem 0;
+      background-color: var(--gray-1);
+    }
+
+    .right__back {
+      border: none;
+      background: none;
+      border-radius: 50px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+
+    .right__title {
+      font-weight: bolder;
+    }
+
+    .right__text .text__singup {
+      cursor: pointer;
+      color: var(--green-2);
+      transition: var(--basic-transition);
+
+      &:hover {
+        color: var(--green-3);
+      }
+    }
+
+    .right__google {
+      padding: 5px;
+      border: none;
+      background: var(--bg-accent);
+      width: fit-content;
+      border-radius: 50px;
+      transition: var(--basic-transition);
+
+      &:hover {
+        background-color: var(--gray-1);
+      }
+    }
+
+    .rigth__form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 10%;
+
+      .form__btn {
+        align-self: center;
+        width: 100px;
+        padding: 8px 12px;
+        background-color: var(--green-3);
+        border: 1px solid var(--green-3);
+        border-radius: 20px;
+        transition: var(--basic-transition);
+
+        &:hover {
+          background-color: var(--bg-accent);
+          color: var(--green-3);
+        }
+      }
+    }
+  }
+}
+
+.hide__password {
+  background: none;
+  border: none;
+  margin-right: 10px;
+}

@@ -1,1 +1,86 @@
-<p>signup works!</p>
+<section class="container">
+  <!-- left -->
+  <article class="container__left">
+    <picture class="left__pic">
+      <img
+        src="../../../../assets/images/bg-green.png"
+        alt="abstract green img"
+        class="pic__img"
+      />
+    </picture>
+    <h1 class="left__text">Estas eligiendo el mejor servicio!</h1>
+  </article>
+  <!-- rigth -->
+  <article class="container__right">
+    <button class="right__back" (click)="navigate(publicRoutes.HOME)">
+      <mat-icon>
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </mat-icon>
+    </button>
+    <h1 class="right__title">Registrate</h1>
+    <p class="right__text">
+      Ya tienes una cuenta?
+      <span class="text__singup" (click)="navigate(publicRoutes.SIGNIN)"
+        >Ingresa.</span
+      >
+    </p>
+    <!-- form -->
+    <form action="" class="rigth__form">
+      <!-- name -->
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="david example" required />
+      </mat-form-field>
+
+      <!-- email -->
+      <mat-form-field>
+        <mat-label>Correo</mat-label>
+        <input matInput placeholder="pat@example.com" required />
+      </mat-form-field>
+
+      <!-- password -->
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" required />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+          class="hide__password"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <!-- confirm passord -->
+      <mat-form-field>
+        <mat-label>Confirmar Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" required />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+          class="hide__password"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button type="submit" class="form__btn">Registro</button>
+    </form>
+    <span class="rigth__hr"></span>
+    <button class="right__google">
+      <picture>
+        <img
+          src="../../../../assets/icons/google.svg"
+          alt="google icon"
+          height="25"
+          width="25"
+        />
+      </picture>
+    </button>
+  </article>
+</section>
