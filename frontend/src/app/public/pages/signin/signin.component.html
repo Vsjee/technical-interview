@@ -25,14 +25,26 @@
       >
     </p>
     <!-- form -->
-    <form action="" class="rigth__form">
+    <form [formGroup]="form" (ngSubmit)="logIn()" class="rigth__form">
       <mat-form-field>
         <mat-label>Correo</mat-label>
-        <input matInput placeholder="pat@example.com" required />
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="email"
+          type="email"
+          autocomplete="email"
+          required
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Contraseña</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" required />
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+          required
+        />
         <button
           mat-icon-button
           matSuffix
@@ -47,7 +59,7 @@
       <button type="submit" class="form__btn">Ingresa</button>
     </form>
     <span class="rigth__hr"></span>
-    <button class="right__google">
+    <button class="right__google" (click)="auth.googleAuth()">
       <picture>
         <img
           src="../../../../assets/icons/google.svg"

@@ -25,23 +25,42 @@
       >
     </p>
     <!-- form -->
-    <form action="" class="rigth__form">
+    <form [formGroup]="form" (ngSubmit)="signIn()" class="rigth__form">
       <!-- name -->
       <mat-form-field>
         <mat-label>Nombre</mat-label>
-        <input matInput placeholder="david example" required />
+        <input
+          matInput
+          placeholder="david example"
+          formControlName="name"
+          type="text"
+          autocomplete="name"
+          required
+        />
       </mat-form-field>
 
       <!-- email -->
       <mat-form-field>
         <mat-label>Correo</mat-label>
-        <input matInput placeholder="pat@example.com" required />
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="email"
+          type="email"
+          autocomplete="email"
+          required
+        />
       </mat-form-field>
 
       <!-- password -->
       <mat-form-field>
         <mat-label>Contraseña</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" required />
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+          required
+        />
         <button
           mat-icon-button
           matSuffix
@@ -57,7 +76,12 @@
       <!-- confirm passord -->
       <mat-form-field>
         <mat-label>Confirmar Contraseña</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" required />
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="confirmPassword"
+          required
+        />
         <button
           mat-icon-button
           matSuffix
@@ -71,8 +95,10 @@
       </mat-form-field>
       <button type="submit" class="form__btn">Registro</button>
     </form>
+
+    <!-- google login -->
     <span class="rigth__hr"></span>
-    <button class="right__google">
+    <button class="right__google" (click)="auth.googleAuth()">
       <picture>
         <img
           src="../../../../assets/icons/google.svg"
