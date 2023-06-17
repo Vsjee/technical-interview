@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { privateRoutes, publicRoutes } from 'src/app/models';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { SnackBarService } from 'src/app/services/snackBar/snack-bar.service';
 
 @Component({
   selector: 'app-signin',
@@ -18,7 +19,11 @@ export class SigninComponent {
   publicRoutes = publicRoutes;
   hide: boolean = true;
 
-  constructor(private router: Router, public auth: AuthService) {}
+  constructor(
+    private router: Router,
+    public auth: AuthService,
+    private _snack: SnackBarService
+  ) {}
 
   navigate(route: string) {
     this.router.navigate([route]);
@@ -29,12 +34,17 @@ export class SigninComponent {
       const { email, password } = this.form.getRawValue();
       this.auth
         .logIn(email, password)
-        .then(() => this.router.navigate([`${privateRoutes.DASHBOARD}`]))
+        .then(() => {
+          this._snack.openSnackBar('Ingresaste');
+          this.router.navigate([`${privateRoutes.DASHBOARD}`]);
+        })
         .catch((err) => {
           console.error(err);
+          this._snack.openSnackBar('Error al intentar ingresar');
         });
     } else {
       this.form.markAllAsTouched();
+      this._snack.openSnackBar('Error datos invalidos');
     }
   }
 }

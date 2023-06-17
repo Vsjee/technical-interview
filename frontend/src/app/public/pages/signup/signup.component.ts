@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { privateRoutes, publicRoutes } from 'src/app/models';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { SnackBarService } from 'src/app/services/snackBar/snack-bar.service';
 import { ValidatorService } from 'src/app/services/validator/validator.service';
 
 @Component({
@@ -30,7 +31,8 @@ export class SignupComponent {
   constructor(
     private router: Router,
     private validator: ValidatorService,
-    public auth: AuthService
+    public auth: AuthService,
+    private _snack: SnackBarService
   ) {}
 
   navigate(route: string) {
@@ -42,12 +44,17 @@ export class SignupComponent {
       const { email, password } = this.form.getRawValue();
       this.auth
         .register(email, password)
-        .then(() => this.router.navigate([`${privateRoutes.DASHBOARD}`]))
+        .then(() => {
+          this._snack.openSnackBar('Registro exitoso');
+          this.router.navigate([`${privateRoutes.DASHBOARD}`]);
+        })
         .catch((error) => {
           console.error(error);
+          this._snack.openSnackBar('Error al registrar');
         });
     } else {
       this.form.markAllAsTouched();
+      this._snack.openSnackBar('Error datos invalidos');
     }
   }
 }
