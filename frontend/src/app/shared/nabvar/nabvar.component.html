@@ -1,5 +1,12 @@
 <nav class="nav" *ngIf="hiddeNavbar === false">
-  <h1>logo</h1>
+  <picture class="nav__logo" (click)="navigate(publicRoutes.HOME)">
+    <img
+      src="../../../assets/icons/logo1.png"
+      alt="logo"
+      width="50"
+      height="50"
+    />
+  </picture>
   <ul class="nav__list">
     <button class="list__item" (click)="navigate(publicRoutes.SIGNIN)">
       Ingresa
@@ -8,7 +15,14 @@
 </nav>
 
 <nav class="nav" *ngIf="changeNavContent === true">
-  <h1>logo</h1>
+  <picture class="nav__logo" (click)="navigate(privateRoutes.DASHBOARD)">
+    <img
+      src="../../../assets/icons/logo1.png"
+      alt="logo"
+      width="50"
+      height="50"
+    />
+  </picture>
   <ul class="nav__list">
     <button class="list__item" (click)="navigate(privateRoutes.PROFILE)">
       Perfil

@@ -36,3 +36,9 @@
     }
   }
 }
+
+.nav__logo {
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
