@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TeamsService } from 'src/app/services/teams/teams.service';
+import { ITeams } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  teams: ITeams[] = [];
 
+  constructor(private teamsService: TeamsService) {}
+
+  ngOnInit(): void {
+    this.teamsService.getAllTeams().subscribe((data) => {
+      this.teams = data;
+    });
+  }
 }

@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<section class="container">
+  <h1>Visualizacón de datos</h1>
+  <article class="container__table">
+    <div class="table__wrapper">
+      <app-teams-table [teams]="teams"></app-teams-table>
+    </div>
+    <router-outlet></router-outlet>
+  </article>
+</section>

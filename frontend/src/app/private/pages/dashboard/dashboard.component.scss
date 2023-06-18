@@ -1,0 +1,13 @@
+.container {
+  padding: 4rem 5%;
+}
+
+.container__table {
+  display: flex;
+  gap: 1rem;
+
+  .table__wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
