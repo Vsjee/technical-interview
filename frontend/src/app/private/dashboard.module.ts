@@ -6,6 +6,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { TeamInfoComponent } from './pages/team-info/team-info.component';
 import { TeamsTableComponent } from './components/teams-table/teams-table.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [DashboardComponent, ProfileComponent, TeamInfoComponent],
@@ -14,6 +15,7 @@ import { TeamsTableComponent } from './components/teams-table/teams-table.compon
     DashboardRoutingModule,
     TeamsTableComponent,
     MatIconModule,
+    PieChartComponent,
   ],
 })
 export class DashboardModule {}

@@ -1,9 +1,18 @@
 <section class="container">
   <h1>Visualizacón de datos</h1>
+
+  <!-- table -->
   <article class="container__table">
     <div class="table__wrapper">
       <app-teams-table [teams]="teams"></app-teams-table>
     </div>
     <router-outlet></router-outlet>
+  </article>
+
+  <!-- charts -->
+  <article class="container__chart">
+    <div class="chart__pie">
+      <app-pie-chart></app-pie-chart>
+    </div>
   </article>
 </section>

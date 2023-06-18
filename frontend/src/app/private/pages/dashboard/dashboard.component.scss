@@ -12,3 +12,16 @@
     overflow: auto;
   }
 }
+
+.container__chart {
+  .chart__pie {
+    width: 50vw;
+  }
+}
+
+// media queries
+@media screen and (max-width: 770px) {
+  .container__table {
+    flex-direction: column;
+  }
+}
