@@ -22,6 +22,8 @@ export class NabvarComponent {
   constructor(private router: Router, public auth: AuthService) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        const splitEventUrl = event.url.split('/')[1];
+
         if (
           event.url === this.publicRoutes.SIGNIN ||
           event.url === this.publicRoutes.SINGUP
@@ -31,10 +33,7 @@ export class NabvarComponent {
           this.hiddeNavbar = false;
         }
 
-        if (
-          event.url === privateRoutes.DASHBOARD ||
-          event.url === privateRoutes.PROFILE
-        ) {
+        if (splitEventUrl === 'private') {
           this.hiddeNavbar = true;
           this.changeNavContent = true;
         } else {
