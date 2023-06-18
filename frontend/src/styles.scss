@@ -15,6 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  /* COLORS */
   --bg-primary: #1a1a1a;
   --bg-primary-transparent: rgba(26, 26, 26, 0.2);
   --bg-accent: #0e0e0e;
@@ -27,6 +28,17 @@
   --white: #ffffff;
   --white-1: #e3e3e3;
 
+  /* GRADIENTS */
+  --linear-pan-bg: linear-gradient(
+    90deg,
+    var(--green-3),
+    var(--white),
+    var(--green-3),
+    var(--white),
+    var(--green-3)
+  );
+
+  /* TRANSITIONS */
   --basic-transition: 0.3s ease-in;
 }
 
