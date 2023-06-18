@@ -20,7 +20,7 @@ export class PieChartComponent implements OnInit {
 
   ngOnInit() {
     const documentStyle = getComputedStyle(document.documentElement);
-    const textColor = documentStyle.getPropertyValue('--text-color');
+    const textColor = documentStyle.getPropertyValue('--white');
 
     this.teamsService.getAllTeams().subscribe((data) => {
       data.map((item) => {
@@ -45,7 +45,7 @@ export class PieChartComponent implements OnInit {
         legend: {
           labels: {
             usePointStyle: true,
-            color: 'white',
+            color: textColor,
           },
         },
       },
