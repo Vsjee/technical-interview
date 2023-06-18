@@ -1,0 +1,32 @@
+<section class="container">
+  <button class="container__close" title="Cerrar" (click)="navigate()">
+    <mat-icon>close_app</mat-icon>
+  </button>
+  <ul>
+    <li>
+      <picture>
+        <img [src]="teamInfo.team.logo" [alt]="teamInfo.team.name" />
+      </picture>
+    </li>
+    <li>Nombre: {{ teamInfo.team.name }}</li>
+    <li>Pais: {{ teamInfo.team.country }}</li>
+    <li>Fundado: {{ teamInfo.team.founded }}</li>
+  </ul>
+  <ul>
+    <li>
+      <picture>
+        <img
+          [src]="teamInfo.venue.image"
+          [alt]="teamInfo.team.name"
+          height="150"
+          width="150"
+        />
+      </picture>
+    </li>
+    <li>Nombre: {{ teamInfo.venue.name }}</li>
+    <li>Ciudad: {{ teamInfo.venue.city }}</li>
+    <li>Dirección: {{ teamInfo.venue.address }}</li>
+    <li>Capacidad: {{ teamInfo.venue.capacity }}</li>
+    <li>Superficie: {{ teamInfo.venue.surface }}</li>
+  </ul>
+</section>
