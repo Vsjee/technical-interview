@@ -45,7 +45,7 @@ export class PieChartComponent implements OnInit {
         legend: {
           labels: {
             usePointStyle: true,
-            color: textColor,
+            color: 'white',
           },
         },
       },
