@@ -30,4 +30,13 @@
       background: var(--bg-accent);
     }
   }
+
+  .container__info {
+    display: grid;
+    gap: 2rem;
+  }
+}
+
+ul {
+  list-style: none;
 }

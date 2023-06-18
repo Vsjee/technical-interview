@@ -3,31 +3,33 @@
     <mat-icon>close_app</mat-icon>
   </button>
 
-  <ul>
-    <li>
-      <picture>
-        <img [src]="teamInfo.team.logo" [alt]="teamInfo.team.name" />
-      </picture>
-    </li>
-    <li>Nombre: {{ teamInfo.team.name }}</li>
-    <li>Pais: {{ teamInfo.team.country }}</li>
-    <li>Fundado: {{ teamInfo.team.founded }}</li>
-  </ul>
-  <ul>
-    <li>
-      <picture>
-        <img
-          [src]="teamInfo.venue.image"
-          [alt]="teamInfo.team.name"
-          height="150"
-          width="150"
-        />
-      </picture>
-    </li>
-    <li>Nombre: {{ teamInfo.venue.name }}</li>
-    <li>Ciudad: {{ teamInfo.venue.city }}</li>
-    <li>Dirección: {{ teamInfo.venue.address }}</li>
-    <li>Capacidad: {{ teamInfo.venue.capacity }}</li>
-    <li>Superficie: {{ teamInfo.venue.surface }}</li>
-  </ul>
+  <div class="container__info">
+    <ul>
+      <li>
+        <picture>
+          <img [src]="teamInfo.team.logo" [alt]="teamInfo.team.name" />
+        </picture>
+      </li>
+      <li><b>Nombre: </b>{{ teamInfo.team.name }}</li>
+      <li><b>Pais: </b> {{ teamInfo.team.country }}</li>
+      <li><b>Fundado: </b> {{ teamInfo.team.founded }}</li>
+    </ul>
+    <ul>
+      <li>
+        <picture>
+          <img
+            [src]="teamInfo.venue.image"
+            [alt]="teamInfo.team.name"
+            height="150"
+            width="150"
+          />
+        </picture>
+      </li>
+      <li><b>Nombre: </b> {{ teamInfo.venue.name }}</li>
+      <li><b>Ciudad: </b> {{ teamInfo.venue.city }}</li>
+      <li><b>Dirección: </b> {{ teamInfo.venue.address }}</li>
+      <li><b>Capacidad: </b> {{ teamInfo.venue.capacity }}</li>
+      <li><b>Superficie: </b> {{ teamInfo.venue.surface }}</li>
+    </ul>
+  </div>
 </section>
