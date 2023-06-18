@@ -1,1 +1,12 @@
-<p>profile works!</p>
+<section class="container">
+  <h1>Tu Perfil</h1>
+  <article class="profile__info">
+    <div class="profile__info__second">
+      <h3>Información de tu cuenta</h3>
+      <p *ngIf="user$ | async as user"><b>Corre: </b> {{ user.email }}</p>
+    </div>
+    <button mat-raised-button color="warn" (click)="openDialog()">
+      Eliminar Cuenta
+    </button>
+  </article>
+</section>
