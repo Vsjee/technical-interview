@@ -14,14 +14,44 @@
 }
 
 .container__chart {
+  margin: 5rem 10%;
+  padding: 0 200px;
+
   .chart__pie {
-    width: 50vw;
+    display: block;
+    margin: 5rem auto;
+    width: 100%;
+    min-height: 500px;
+    text-align: center;
+
+    .pie__title {
+      font-size: 1.5rem;
+    }
   }
 }
 
 // media queries
+@media screen and (max-width: 1200px) {
+  .container__chart {
+    padding: 0 80px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container__chart {
+    margin: 5rem 8%;
+    padding: 0 40px;
+  }
+}
+
 @media screen and (max-width: 770px) {
   .container__table {
     flex-direction: column;
+    gap: 0;
+  }
+
+  .container__chart {
+    margin: 5rem 0;
+    padding: 0;
   }
 }

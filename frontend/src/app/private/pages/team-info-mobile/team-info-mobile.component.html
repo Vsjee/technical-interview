@@ -1,0 +1,46 @@
+<section class="container">
+  <button class="container__back" title="Cerrar" (click)="navigate()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+
+  <div class="container__info">
+    <ul class="info__left">
+      <h1>
+        <b>Equipo</b>
+      </h1>
+      <li>
+        <picture>
+          <img
+            [src]="teamInfo.team.logo"
+            [alt]="teamInfo.team.name"
+            class="img team__img"
+          />
+        </picture>
+      </li>
+      <li><b>Nombre:</b> {{ teamInfo.team.name }}</li>
+      <li><b>Pais: </b>{{ teamInfo.team.country }}</li>
+      <li><b>Fundado:</b> {{ teamInfo.team.founded }}</li>
+    </ul>
+    <ul class="info__right">
+      <h1>
+        <b>Estadio (Evento)</b>
+      </h1>
+      <li>
+        <picture>
+          <img
+            [src]="teamInfo.venue.image"
+            [alt]="teamInfo.team.name"
+            height="150"
+            width="150"
+            class="img venue__img"
+          />
+        </picture>
+      </li>
+      <li><b>Nombre: </b>{{ teamInfo.venue.name }}</li>
+      <li><b>Ciudad:</b> {{ teamInfo.venue.city }}</li>
+      <li><b>Dirección:</b> {{ teamInfo.venue.address }}</li>
+      <li><b>Capacidad:</b> {{ teamInfo.venue.capacity }}</li>
+      <li><b>Superficie:</b> {{ teamInfo.venue.surface }}</li>
+    </ul>
+  </div>
+</section>

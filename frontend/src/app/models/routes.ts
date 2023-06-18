@@ -5,6 +5,7 @@ export const publicRoutes = {
 };
 
 export const privateRoutes = {
+  MDASHBOARD: '/private/dashboard/info',
   DASHBOARD: '/private/dashboard',
   PROFILE: '/private/profile',
 };

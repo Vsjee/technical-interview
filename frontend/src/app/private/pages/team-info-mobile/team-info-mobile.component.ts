@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ITeams } from 'src/app/interfaces';
 import { privateRoutes } from 'src/app/models';
@@ -6,31 +6,25 @@ import { teamsModel } from 'src/app/models/team.model';
 import { TeamsService } from 'src/app/services/teams/teams.service';
 
 @Component({
-  selector: 'app-team-info',
-  templateUrl: './team-info.component.html',
-  styleUrls: ['./team-info.component.scss'],
+  selector: 'app-team-info-mobile',
+  templateUrl: './team-info-mobile.component.html',
+  styleUrls: ['./team-info-mobile.component.scss'],
 })
-export class TeamInfoComponent implements OnInit {
+export class TeamInfoMobileComponent implements OnInit {
   teamInfo: ITeams = teamsModel;
   teamInfoId: string = '';
-  screenWidth: number = window.innerWidth;
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: { target: { innerWidth: any } }) {
-    this.screenWidth = event.target.innerWidth;
-  }
 
   constructor(
-    private teams: TeamsService,
+    private router: Router,
     private route: ActivatedRoute,
-    private router: Router
+    private teamsService: TeamsService
   ) {
     this.route.paramMap.subscribe(() => this.ngOnInit());
     this.initRoute();
   }
 
   initTeamInfo(id: string): void {
-    this.teams.getTeamById(id).subscribe((data) => {
+    this.teamsService.getTeamById(id).subscribe((data) => {
       this.teamInfo = data;
     });
   }

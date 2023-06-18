@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TeamInfoComponent } from './pages/team-info/team-info.component';
+import { TeamInfoMobileComponent } from './pages/team-info-mobile/team-info-mobile.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
             component: TeamInfoComponent,
           },
         ],
+      },
+      {
+        path: 'dashboard/info/:teamInfo',
+        component: TeamInfoMobileComponent,
       },
       {
         path: 'profile',
