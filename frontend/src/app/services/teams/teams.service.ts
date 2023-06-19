@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 import { ITeams } from 'src/app/interfaces';
 
 @Injectable({
@@ -17,5 +17,9 @@ export class TeamsService {
 
   getTeamById(id: string): Observable<ITeams> {
     return this.http.get<ITeams>(`${this.baseUri}/${id}`);
+  }
+
+  create(team: ITeams): Promise<ITeams> {
+    return firstValueFrom(this.http.post<ITeams>(this.baseUri, team));
   }
 }
