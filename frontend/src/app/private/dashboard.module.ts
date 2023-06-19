@@ -12,6 +12,7 @@ import { TeamInfoMobileComponent } from './pages/team-info-mobile/team-info-mobi
 import { DeleteAccountDialogComponent } from './pages/profile/components/delete-account-dialog/delete-account-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
 import { DeleteItemComponent } from './components/delete-item/delete-item.component';
+import { StandingsTableComponent } from './components/standings-table/standings-table.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DeleteItemComponent } from './components/delete-item/delete-item.compon
     DeleteAccountDialogComponent,
     MatButtonModule,
     DeleteItemComponent,
+    StandingsTableComponent,
   ],
 })
 export class DashboardModule {}
