@@ -31,4 +31,15 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.delete('/:teamId', async (req, res) => {
+  const { teamId } = req.params;
+
+  try {
+    const team = await Team.module.findByIdAndDelete(teamId)
+    res.json(team)
+  } catch (error) {
+    res.json({ error: error.message })
+  }
+})
+
 module.exports = router

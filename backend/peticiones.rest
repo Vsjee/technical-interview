@@ -26,3 +26,7 @@ Content-Type: application/json
       "image": "https://media.api-sports.io/football/venues/556.png"
     }
 }
+
+
+###
+DELETE http://localhost:3000/api/teams/648fbc6c2facd8127e7a8bd2
