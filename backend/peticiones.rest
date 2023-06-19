@@ -2,3 +2,27 @@ GET http://localhost:3000/api/teams
 
 ###
 GET http://localhost:3000/api/teams/648d3ea926a3bbff7d66a94c
+
+###
+POST http://localhost:3000/api/teams
+Content-Type: application/json
+
+{
+    "team": {
+      "id": 100,
+      "name": "test22222",
+      "country": "Colombia",
+      "founded": 1878,
+      "national": false,
+      "logo": "https://media.api-sports.io/football/teams/33.png"
+    },
+    "venue": {
+      "id": 150,
+      "name": "test evento",
+      "address": "direccion",
+      "city": "Bogota",
+      "capacity": 76212,
+      "surface": "grass",
+      "image": "https://media.api-sports.io/football/venues/556.png"
+    }
+}

@@ -22,4 +22,13 @@ router.get('/:teamId', async (req, res) => {
   }
 })
 
+router.post('/', async (req, res) => {
+  try {
+    const team = Team.module.create(req.body)
+    res.json(team)
+  } catch (error) {
+    res.json({ error: error.message })
+  }
+})
+
 module.exports = router
