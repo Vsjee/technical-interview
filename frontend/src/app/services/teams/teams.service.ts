@@ -22,4 +22,8 @@ export class TeamsService {
   create(team: ITeams): Promise<ITeams> {
     return firstValueFrom(this.http.post<ITeams>(this.baseUri, team));
   }
+
+  deleteById(id: string): Promise<ITeams> {
+    return firstValueFrom(this.http.delete<ITeams>(`${this.baseUri}/${id}`));
+  }
 }

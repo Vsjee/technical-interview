@@ -11,6 +11,7 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { TeamInfoMobileComponent } from './pages/team-info-mobile/team-info-mobile.component';
 import { DeleteAccountDialogComponent } from './pages/profile/components/delete-account-dialog/delete-account-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { DeleteItemComponent } from './components/delete-item/delete-item.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     PieChartComponent,
     DeleteAccountDialogComponent,
     MatButtonModule,
+    DeleteItemComponent,
   ],
 })
 export class DashboardModule {}

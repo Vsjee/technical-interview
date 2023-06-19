@@ -5,10 +5,18 @@ import { ITeams } from 'src/app/interfaces';
 import { DashboardRoutingModule } from '../../dashboard-routing.module';
 import { Router } from '@angular/router';
 import { privateRoutes } from 'src/app/models';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DeleteItemComponent } from '../delete-item/delete-item.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatTableModule, DashboardRoutingModule],
+  imports: [
+    CommonModule,
+    MatTableModule,
+    DashboardRoutingModule,
+    MatButtonModule,
+  ],
   selector: 'app-teams-table',
   templateUrl: './teams-table.component.html',
   styleUrls: ['./teams-table.component.scss'],
@@ -25,6 +33,7 @@ export class TeamsTableComponent {
     'founded',
     'stadium',
     'info',
+    'delete',
   ];
 
   @HostListener('window:resize', ['$event'])
@@ -32,7 +41,7 @@ export class TeamsTableComponent {
     this.screenWidth = event.target.innerWidth;
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dialog: MatDialog) {}
 
   navigate(id: string) {
     this.router.navigate([`${privateRoutes.DASHBOARD}/${id}`]);
@@ -40,5 +49,17 @@ export class TeamsTableComponent {
 
   navigateMobile(id: string) {
     this.router.navigate([`${privateRoutes.MDASHBOARD}/${id}`]);
+  }
+
+  openDialog(id: string) {
+    const dialogConf = new MatDialogConfig();
+
+    dialogConf.disableClose = true;
+    dialogConf.autoFocus = true;
+    dialogConf.data = {
+      id: id,
+    };
+
+    const dialogRef = this.dialog.open(DeleteItemComponent, dialogConf);
   }
 }
