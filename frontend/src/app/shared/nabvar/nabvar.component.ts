@@ -1,14 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogConfig,
+  MatDialogModule,
+} from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { NavigationEnd, Router } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { privateRoutes, publicRoutes } from 'src/app/models';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { AddNewTeamComponent } from '../add-new-team/add-new-team.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, AppRoutingModule, MatIconModule],
+  imports: [CommonModule, AppRoutingModule, MatIconModule, MatDialogModule],
   selector: 'app-nabvar',
   templateUrl: './nabvar.component.html',
   styleUrls: ['./nabvar.component.scss'],
@@ -19,7 +25,11 @@ export class NabvarComponent {
   hiddeNavbar: boolean = false;
   changeNavContent: boolean = false;
 
-  constructor(private router: Router, public auth: AuthService) {
+  constructor(
+    private router: Router,
+    public auth: AuthService,
+    private dialog: MatDialog
+  ) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const splitEventUrl = event.url.split('/')[1];
@@ -45,5 +55,18 @@ export class NabvarComponent {
 
   navigate(route: string) {
     this.router.navigate([route]);
+  }
+
+  openDialog() {
+    const dialogConf = new MatDialogConfig();
+
+    dialogConf.disableClose = true;
+    dialogConf.autoFocus = true;
+
+    const dialogRef = this.dialog.open(AddNewTeamComponent, dialogConf);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

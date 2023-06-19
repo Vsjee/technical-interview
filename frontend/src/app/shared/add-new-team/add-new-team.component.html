@@ -1,0 +1,166 @@
+<h2 mat-dialog-title>Anadir nuevo equipo</h2>
+<mat-dialog-content>
+  <form [formGroup]="form" (submit)="onSubmit()" class="form">
+    <div class="form__team">
+      <h1>Equipo</h1>
+      <mat-form-field>
+        <!-- team id -->
+        <mat-label>ID</mat-label>
+        <input
+          matInput
+          type="text"
+          type="number"
+          placeholder="123456"
+          formControlName="teamId"
+          required
+        />
+      </mat-form-field>
+
+      <!-- team name -->
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Equipo123456"
+          formControlName="teamName"
+          required
+        />
+      </mat-form-field>
+
+      <!-- team country -->
+      <mat-form-field>
+        <mat-label>Pais</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Pais123456"
+          formControlName="teamCountry"
+          required
+        />
+      </mat-form-field>
+
+      <!-- team founded -->
+      <mat-form-field>
+        <mat-label>Año fundación</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Fundación123456"
+          formControlName="teamFounded"
+          required
+        />
+      </mat-form-field>
+
+      <!-- team national -->
+      <mat-form-field>
+        <mat-label>Es equipo nacional?</mat-label>
+        <mat-select formControlName="teamNational" required>
+          <mat-option value="true">Si</mat-option>
+          <mat-option value="false">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- team logo -->
+      <mat-form-field>
+        <mat-label>Link del logo</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="http://logoimg"
+          formControlName="teamLogo"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="form__venue">
+      <h1>Estadio (Evento)</h1>
+      <!-- venue id -->
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input
+          type="number"
+          matInput
+          placeholder="123456"
+          formControlName="venueId"
+          required
+        />
+      </mat-form-field>
+
+      <!-- venue name -->
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Nombre123456"
+          formControlName="venueName"
+          required
+        />
+      </mat-form-field>
+
+      <!-- venue address -->
+      <mat-form-field>
+        <mat-label>Dirección</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Dirección #12 - 456"
+          formControlName="venueAddress"
+          required
+        />
+      </mat-form-field>
+
+      <!-- venue city -->
+      <mat-form-field>
+        <mat-label>Ciudad</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Ciudad123456"
+          formControlName="venueCity"
+          required
+        />
+      </mat-form-field>
+
+      <!-- venue capacity -->
+      <mat-form-field>
+        <mat-label>Capacidad</mat-label>
+        <input
+          type="number"
+          matInput
+          placeholder="123456"
+          formControlName="venueCapacity"
+          required
+        />
+      </mat-form-field>
+
+      <!-- venue surface -->
+      <mat-form-field>
+        <mat-label>Tipo superficie?</mat-label>
+        <mat-select formControlName="venueSurface" required>
+          <mat-option value="grass">Pasto</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- venue image -->
+      <mat-form-field>
+        <mat-label>Estadio imagen</mat-label>
+        <input
+          type="text"
+          placeholder="http://estadioimg"
+          matInput
+          formControlName="venueImage"
+          required
+        />
+      </mat-form-field>
+    </div>
+
+    <button type="sumbit" mat-raised-button class="register__btn">
+      Registrar Equipo
+    </button>
+  </form>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</mat-dialog-content>
