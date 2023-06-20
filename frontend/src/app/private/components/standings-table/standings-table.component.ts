@@ -30,7 +30,6 @@ export class StandingsTableComponent implements OnInit {
   ngOnInit(): void {
     this.standings.getStandings().subscribe((data) => {
       this.standingsInfo = data;
-      console.log(this.standingsInfo);
     });
   }
 }
