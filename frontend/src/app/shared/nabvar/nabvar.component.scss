@@ -15,6 +15,15 @@
     justify-content: center;
     gap: 0.8rem;
 
+    .list__add {
+      cursor: pointer;
+      transition: var(--basic-transition);
+
+      &:hover {
+        color: var(--green-3);
+      }
+    }
+
     .list__item {
       padding: 8px 12px;
       background-color: var(--green-3);
@@ -33,6 +42,12 @@
       place-content: center;
       background: none;
       border: none;
+      color: var(--white);
+      transition: var(--basic-transition);
+
+      &:hover {
+        color: var(--gray-3);
+      }
     }
   }
 }

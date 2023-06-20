@@ -9,12 +9,14 @@ import { ITeams } from 'src/app/interfaces';
 })
 export class DashboardComponent implements OnInit {
   teams: ITeams[] = [];
+  loading: boolean = true;
 
   constructor(private teamsService: TeamsService) {}
 
   ngOnInit(): void {
     this.teamsService.getAllTeams().subscribe((data) => {
       this.teams = data;
+      this.loading = false;
     });
   }
 }

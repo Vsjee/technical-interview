@@ -69,3 +69,17 @@ h6 {
 button {
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: inherit;
+}

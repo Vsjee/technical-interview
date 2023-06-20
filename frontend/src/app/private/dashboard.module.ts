@@ -13,6 +13,7 @@ import { DeleteAccountDialogComponent } from './pages/profile/components/delete-
 import { MatButtonModule } from '@angular/material/button';
 import { DeleteItemComponent } from './components/delete-item/delete-item.component';
 import { StandingsTableComponent } from './components/standings-table/standings-table.component';
+import { LoadingComponent } from '../shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { StandingsTableComponent } from './components/standings-table/standings-
     MatButtonModule,
     DeleteItemComponent,
     StandingsTableComponent,
+    LoadingComponent,
   ],
 })
 export class DashboardModule {}

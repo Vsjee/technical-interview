@@ -1,26 +1,37 @@
-<section class="container">
-  <h1>Visualizacón de datos</h1>
+<span [ngSwitch]="loading">
+  <div *ngSwitchCase="true" class="spinner">
+    <app-loading class="loading"></app-loading>
+  </div>
+  <div *ngSwitchCase="false">
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+  </div>
+</span>
 
-  <!-- table -->
-  <article class="container__table">
-    <div class="table__wrapper">
-      <app-teams-table [teams]="teams"></app-teams-table>
-    </div>
-    <router-outlet></router-outlet>
-  </article>
+<ng-template #content>
+  <section class="container">
+    <!-- table -->
+    <h1 class="table__title">Equipos</h1>
+    <article class="container__table">
+      <div class="table__wrapper">
+        <app-teams-table [teams]="teams"></app-teams-table>
+      </div>
+      <router-outlet></router-outlet>
+    </article>
 
-  <!-- charts -->
-  <article class="container__chart">
-    <div class="chart__pie">
-      <h1 class="pie__title">Capacidad de los estadios</h1>
-      <app-pie-chart></app-pie-chart>
-    </div>
-  </article>
+    <!-- charts -->
+    <article class="container__chart">
+      <div class="chart__pie">
+        <h1 class="pie__title">Capacidad de los estadios</h1>
+        <app-pie-chart></app-pie-chart>
+      </div>
+    </article>
 
-  <!-- table -->
-  <article class="container__table">
-    <div class="table__wrapper">
-      <app-standings-table></app-standings-table>
-    </div>
-  </article>
-</section>
+    <!-- table -->
+    <h1 class="table__title">Resultados (Ranking)</h1>
+    <article class="container__table">
+      <div class="table__wrapper">
+        <app-standings-table></app-standings-table>
+      </div>
+    </article>
+  </section>
+</ng-template>
